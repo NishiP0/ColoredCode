@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <title>PROGRAM CREATER SAMPLE</title>
+</head>
+<body>
+    <p>ここにHTMLファイルが表示されます</p>
+
+    <div class = "program">
+        <div class="pro_lang">$$$LANGUAGE$$$</div>
+
+        <input id="trigger1" class="grad-trigger" type="checkbox">
+        <label class="grad-btn" for="trigger1"></label>
+
+$$$LINE_NUMBER$$$
+<div class="program_main"><pre>$$$PROGRAM_HTML$$$</pre>
+
+
+    </div></div>
+    <p>ここにHTMLファイルが表示されます</p>
+</body>
+
+<style type="text/css">
+    body{
+        background-color:#333;
+    }
+    p{
+        color:#fff;
+    }
+    
+    .program_main, .L_Number{
+        overflow-y: hidden;
+        height: 100px;
+        font-size:14px;
+        font-weight:normal;
+        line-height:16px;
+        margin-top:0px;
+        margin-bottom:38px;
+    }
+    
+
+    .program_main{
+        padding-left:5px;
+        margin-left:0px;
+        width:auto;
+        background-color:#000;
+        overflow-x:scroll;
+        border-top:solid 1.5px #fff;
+        border-right:solid 1.5px #fff;
+        border-bottom:solid 1.5px #fff;
+        color:#fff;
+    }
+
+    .L_Number{ 
+        width:30px;
+        background-color:#000;
+        float:left;
+        text-align:right;
+        text-underline-position:below;
+        text-decoration:none;
+        padding-right:2px;
+        border-right:solid 0.5px #ccc;
+
+        border-bottom:solid 1.5px #fff;
+        border-top:solid 1.5px #fff;
+        border-left:solid 1.5px #fff;
+        
+        color:#fff;
+    }
+
+   .pro_lang{
+        color:#fff;
+        background-color:#222;
+        border-top:solid 4px yellow;
+        height:20px;
+        padding:3px;
+        width:70px;
+   } 
+   
+.program{
+    position:relative;
+}
+.grad-btn {
+  position: absolute;
+  bottom:-30px;
+  width: 100%;
+  height:30px;
+  background:#244d89;
+  color: #fff;
+  font-size: 18px;
+  font-weight:bold;
+  text-align: center;
+  cursor: pointer;
+}
+
+.grad-btn::before {
+  content: "続きを読む"
+}
+
+.program_main::before {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 140px; 
+  content: "";
+}
+
+.grad-trigger {
+  display: none; 
+}
+
+.grad-trigger:checked ~ .grad-btn::before {
+  content: "閉じる" 
+}
+.grad-trigger:checked ~ .program_main,
+.grad-trigger:checked ~ .L_Number {
+  height: auto; 
+}
+.grad-trigger:checked ~ .program_main::before,
+.grad-trigger:checked ~ .L_Number::before{
+  display: none; 
+}
+
+$$$PROGRAM_CSS$$$
+
+</style>
+
+</html>
